@@ -77,12 +77,10 @@ function playGame() {
       rpsButton.onclick = () => onClickRPS(rpsButton.value)
     })
   
-    // // Add a click listener to the end game button that runs the endGame() function on click
-    // let endGameButton = document.getElementById('endGameButton')
-    // endGameButton.onclick = () => endGame()
+    const endGameButton = document.getElementById('endGameButton')
+    endGameButton.onclick = () => endGame(totalScore)
   }
   
-
 playGame()
 
 
