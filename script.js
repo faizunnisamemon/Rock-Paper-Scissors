@@ -16,7 +16,7 @@ function getResult(playerChoice, computerChoice) {
     let score;
 
     // All stituation where human draw, set 'score' to 0
-    if (playerChoice == computerChioce){
+    if (playerChoice == computerChoice){
         score = 0
     } else if (playerChoice == 'Rock' && computerChoice == 'Scissors') {
         score = 1
@@ -29,7 +29,7 @@ function getResult(playerChoice, computerChoice) {
     }
 
     // return score
-    return getResult
+    return score
 }
 
 
@@ -39,6 +39,9 @@ function onClickRPS(playerChoice) {
 
     const computerChoice = getComputerChoice()
     console.log({computerChoice})
+    
+    const score = getResult(playerChoice, computerChoice)
+    console.log ({score})
 }
 
 function playGame() {
