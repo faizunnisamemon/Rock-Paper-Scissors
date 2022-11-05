@@ -80,7 +80,20 @@ function playGame() {
     const endGameButton = document.getElementById('endGameButton')
     endGameButton.onclick = () => endGame(totalScore)
   }
-  
+
+function endGame(totalScore) {
+    totalScore['playerScore'] = 0
+    totalScore['computerscore'] = 0
+
+    const resultDiv = document.getElementById ('result')
+    const handsDiv = document.getElementById ('hands')
+    const playerScoreDiv = document.getElementById('player-score')
+
+    resultDiv.innerText = ' '
+    handsDiv.innerText = ' '
+    playerScoreDiv.innerText = ' '
+}  
+
 playGame()
 
 
