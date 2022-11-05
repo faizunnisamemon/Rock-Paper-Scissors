@@ -1,4 +1,5 @@
 
+const totalScore = {computerScore: 0, playerScore: 0}
 
 
 // getComputerChoice()
@@ -32,7 +33,27 @@ function getResult(playerChoice, computerChoice) {
     return score
 }
 
+function showResult(score, playerChoice, computerChoice) {
 
+    const resultDiv = document.getElementById ('result')
+    const handsDiv = document.getElementById ('hands')
+    const playerScoreDiv = document.getElementById('player-score') 
+   
+    if (score == -1){
+        resultDiv.innerText = 'You Lose!'
+    } else if (score == 0) {
+        resultDiv.innerText = "It's a tie"
+    } else {
+        resultDiv.innerText = 'You won!'
+    }
+
+    handsDiv.innerText = `${playerChoice} vs ${computerChoice}`
+    playerScoreDiv.innerText = `Your score ${totalScore['playerScore']}`
+}
+
+
+
+// Calculate who won ans show it on the screen
 function onClickRPS(playerChoice) {
 
     console.log({playerChoice})
@@ -41,7 +62,10 @@ function onClickRPS(playerChoice) {
     console.log({computerChoice})
     
     const score = getResult(playerChoice, computerChoice)
+
+    totalScore['playerScore'] += score
     console.log ({score})
+    showResult(score, playerChoice, computerChoice)
 }
 
 function playGame() {
